@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(https://w0.peakpx.com/wallpaper/462/884/HD-wallpaper-juice-fresh-fruits-water-fruits-juicy-splash.jpg);
+    padding: 20px;
+}
+
+.box {
+    width: 90%;
+    max-width: 500px;
+    background: #fafafa;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 20px 5px rgba(0,0,0,0.5);
+    margin: 20px;
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 20px 0;
+}
+
+.content {
+    padding: 0 15px;
+}
+
+.input, .inputW, .inputH {
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input label, .inputW label, .inputH label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.input input, .inputW input, .inputH input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #33f3ff;
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    padding: 5px 0;
+}
+
+.containerHW {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.reset {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+    background: rgb(240, 225, 20);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px 0;
+    width: 45%;
+    outline: none;
+    border: none;
+    transition: all 0.5s;
+}
+
+.reset:hover {
+    background: #e74c3c;
+}
+
+button.calculate {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+    background: rgb(46,204,113);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px 0;
+    width: 45%;
+    outline: none;
+    border: none;
+    transition: all 0.5s;
+}
+
+button.calculate:hover {
+    background: #0dadf7;
+}
+
+.result {
+    padding: 10px 20px;
+}
+
+.result p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.result #result {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #3a0ffc;
+    background-color: #eaeaea;
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 55px;
+    margin-bottom: 25px;
+}
+
+#comment {
+    color: #0d09f5;
+    font-weight: 800;
+}
+
+.comment {
+    display: none;
+    border: dashed 1px;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.footer-text {
+    text-decoration: none;
+    color: rgba(40, 40, 40, 0.8);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 0.875rem;
+    transition: all 0.5s;
+}
+
+.footer-text:hover {
+    color: rgba(40, 40, 40, 1);
+}
+
+.gender {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+.gender .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 7px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    user-select: none;
+}
+
+.gender .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.gender .container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.gender .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.gender .container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.gender .container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 100px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 90%;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: #393c76 -1px 2px 2px 1px;
+}
+
+#modalText {
+    padding-top: 8px;
+    padding-right: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(24, 23, 23);
+}
+
+.modal-wrong {
+    border: 2px solid red;
+}
+
+.modal-correct {
+    border: 2px solid green;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close:hover {
+    color: #d41111;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .box {
+        max-width: 600px;
+    }
+
+    .input input, .inputW input, .inputH input {
+        font-size: 1.75rem;
+    }
+    
+    .gender .container {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .box {
+        max-width: 700px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .input input, .inputW input, .inputH input {
+        font-size: 2rem;
+    }
+    
+    .gender .container {
+        font-size: 1.75rem;
+    }
+
+    .modal-content {
+        max-width: 700px;
+    }
+}
+
+/* Style untuk modal tutorial */
+.tutorial-btn {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+    background: rgb(46,204,113);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 50%;
+    outline: none;
+    border: none;
+    transition: all 0.5s;
+    margin-bottom: 20px;
+}
+
+.tutorial-btn:hover {
+    background: #0df740;
+}
+
+.close-tutorial {
+  color: #aaaaaa;
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-tutorial:hover {
+  color: #d41111; 
+}
