@@ -5,45 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator BMI</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <style>
+        .features {
+            text-align: left;
+            margin-left: 1cm;
+            margin-top: 1cm;
+        }
+
+        .features-table {
+            margin-left: 1cm;
+            text-align: left;
+        }
+
+        .features p {
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        .features ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .features-table {
+            margin-left: 0;
+            border-spacing: 0 15px;
+        }
+
+        .features-table td {
+            padding-right: 20px;
+            text-align: left;
+        }
+
+        .features .note {
+            text-align: justify;
+            margin: 20px;
+        }
+
+        .intro-text {
+            margin-top: 20px;
+            text-align: justify;
+            margin-left: 1cm;
+            margin-right: 1cm;
+        }
+
+        .call-to-action {
+            text-align: left;
+            margin-left: 1cm;
+            margin-right: 1cm;
+            margin-top: 10px;
+        }
+
+        .tutorial-text {
+            margin-top: 10px;
+            text-align: left;
+            margin-left: 1cm;
+            margin-right: 1cm;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="box">
-          <h1>Kalkulator BMI</h1>
-          <button class="tutorial-btn" id="tutorialBtn">Cara Pengisian</button>
-          <div class="content">
-            <div class="input">
-                <label for="height">Umur</label>
-                <input type="text" class="text-input" id="age" autocomplete="off" required/>
+            <h1>Kalkulator BMI</h1>
+            <p class="intro-text" id="intro-text">Ingin tahu apakah berat badan Anda ideal? Hitung indeks massa tubuh (BMI) Anda sekarang! Kalkulator BMI kami mudah digunakan dan memberikan hasil akurat dalam hitungan detik.</p>
+            <p class="tutorial-text" id="tutorial-text">Bingung cara isinya? Pencet ini dulu</p>
+            <button class="tutorial-btn" id="tutorialBtn">Cara Pengisian</button>
+            <p class="call-to-action" id="call-to-action">Yuk, coba sekarang!</p>
+            <div class="content">
+                <div class="input">
+                    <label for="age">Umur</label>
+                    <input type="text" class="text-input" id="age" autocomplete="off" required/>
+                </div>
+                <div class="gender">
+                    <label class="container">
+                        <input type="radio" name="radio" id="m"><p class="text">Laki-Laki</p>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">
+                        <input type="radio" name="radio" id="f"><p class="text">Perempuan</p>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="containerHW">
+                    <div class="inputH">
+                        <label for="height">Tinggi Badan (cm)</label>
+                        <input type="number" id="height" required>
+                    </div>
+                    <div class="inputW">
+                        <label for="weight">Berat Badan (kg)</label>
+                        <input type="number" id="weight" required>
+                    </div>
+                </div>
+                <button class="calculate" id="submit" onclick="calculate();">Hitung BMI</button>
+                <button class="reset" id="resetBtn" onclick="resetForm();">Reset</button>
             </div>
-            <div class="gender">
-                <label class="container">
-                    <input type="radio" name="radio" id="m"><p class="text">Laki-Laki</p>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                    <input type="radio" name="radio" id="f"><p class="text">Perempuan</p>
-                    <span class="checkmark"></span>
-                </label>
+            <div class="result">
+                <p>Nilai BMI Kamu Adalah</p>
+                <div id="result">00.00</div>
+                <p class="comment"></p>
             </div>
-            <div class="containerHW">
-            <div class="inputH">
-              <label for="height">Tinggi Badan (cm)</label>
-              <input type="number" id="height" required>
+            <h2 class="features" id="featuresHeader">Keunggulan Fitur</h2>
+            <div class="features" id="featuresContent">
+                <table class="features-table">
+                    <tr>
+                        <td>1.</td>
+                        <td>Menghitung BMI untuk mengetahui berat badan ideal.</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Menentukan apakah berat badan Anda berada dalam kategori sehat.</td>
+                    </tr>
+                </table>
+                <p class="note">Kalkulator ini hanya untuk orang dewasa dan tidak disarankan bagi wanita hamil atau menyusui. Hasil BMI sebaiknya digunakan sebagai panduan umum, dan tindakan lebih lanjut harus didiskusikan dengan profesional kesehatan, seperti dokter.</p>
             </div>
-            <div class="inputW">
-              <label for="weight">Berat Badan (kg)</label>
-              <input type="number" id="weight" required>
-            </div>
-          </div>
-            <button class="calculate" id="submit" onclick="calculate();">Hitung BMI</button>
-            <button class="reset" id="resetBtn" onclick="resetForm();">Reset</button>
-          </div>
-          <div class="result">
-            <p>Nilai BMI Kamu Adalah</p>
-            <div id="result">00.00</div>
-            <p class="comment"></p>
-          </div>
         </div>
     </div>
 
